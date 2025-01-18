@@ -1,0 +1,77 @@
+     Implementasi Machine Learning dalam Perancangan Aplikasi Kasir Bagi Pengusaha UMKM
+
+Nama: Fifiatur Rizqi  
+NIM: A11.2022.14526  
+Kelompok: A11.4517 
+
+Ringkasan dan Permasalahan
+
+Ringkasan
+Proposal ini membahas pengembangan aplikasi kasir berbasis desktop untuk pengusaha UMKM menggunakan metode waterfall. Tujuannya adalah membantu pemilik UMKM dalam mengelola penjualan dan stok barang secara lebih efisien.
+
+Permasalahan
+Pengusaha UMKM sering mengalami kesulitan dalam pencatatan transaksi dan pengelolaan stok barang menggunakan metode manual yang memakan waktu dan rawan kesalahan.
+
+Tujuan
+- Mengembangkan sistem kasir berbasis desktop yang mempermudah pengelolaan transaksi.
+- Mengoptimalkan pencatatan data dengan memanfaatkan pembelajaran mesin.
+
+ Model Penyelesaian
+mermaid
+graph TD
+A[Analisis Kebutuhan] --> B[Desain Sistem]
+B --> C[Implementasi]
+C --> D[Pengujian]
+D --> E[Pemeliharaan]
+
+ Penjelasan Dataset
+
+Jenis Data yang Digunakan
+1. Informasi Produk: Nama produk, kode produk, harga, persediaan.
+2. Informasi Pelanggan: Nama pelanggan, nomor telepon.
+3. Riwayat Transaksi: Tanggal, barang yang dibeli, jumlah, total harga, metode pembayaran.
+4. Informasi Pengguna: Nama pengguna, kata sandi, hak akses.
+
+ Proses Exploratory Data Analysis (EDA)
+EDA dilakukan untuk memahami distribusi data dan mengidentifikasi kemungkinan anomali:
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+Contoh dataset (place holder)
+data = {
+    'Product': ['Produk A', 'Produk B', 'Produk C'],
+    'Price': [10000, 20000, 15000],
+    'Stock': [50, 30, 20]}
+product_df = pd.DataFrame(data)
+product_df.describe()
+
+
+ Proses Learning / Modeling
+Menggunakan algoritma pembelajaran mesin untuk memprediksi penjualan berdasarkan riwayat transaksi.
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+
+Placeholder untuk dataset pelatihan
+X = [[1, 10000], [2, 20000], [3, 15000]]  # Contoh fitur
+y = [500, 1200, 800]  # Contoh target penjualan
+model = LinearRegression()
+model.fit(X, y)
+
+
+Performa Model
+Metrik evaluasi model digunakan untuk mengukur akurasi:
+python
+from sklearn.metrics import mean_squared_error
+y_pred = model.predict(X)
+mse = mean_squared_error(y, y_pred)
+print(f"Mean Squared Error: {mse}")
+
+
+Hasil
+Aplikasi yang dikembangkan memiliki peran untuk:
+Admin: Mengelola produk, transaksi, dan laporan.
+Kasir: Memproses transaksi dan mencetak struk.
+
+Kesimpulan
+Model dikembangkan menggunakan algoritma Linear Regression untuk memprediksi penjualan barang. Penggunaan metode waterfall memungkinkan proses yang terstruktur mulai dari analisis hingga pengujian. Hasil menunjukkan bahwa integrasi machine learning dapat meningkatkan efisiensi pengelolaan transaksi dan persediaan bagi pengusaha UMKM. Metode waterfall menyediakan panduan yang jelas untuk pengembangan aplikasi POS berbasis desktop. Implementasi machine learning dapat memberikan wawasan yang lebih baik dalam pengelolaan data transaksi dan stok barang.
